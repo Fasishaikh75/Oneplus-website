@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>OnePlus </title>
+  <style>
+    .navbar-custom {
+      background-color: #ffffff; /* White background */
+      border-bottom: 1px solid #ddd; /* Light gray border */
+      padding: 0.5rem 1rem;
+    }
+    .navbar-brand {
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: #000000; /* Black for the logo and brand name */
+    }
+    .nav-link {
+      color: #333333; /* Dark gray for nav items */
+      margin: 0 10px;
+    }
+    .nav-link:hover {
+      color: #ff4500; /* Orange hover effect */
+    }
+    .icon {
+      font-size: 1.2rem;
+      margin: 0 10px;
+    }
+    .icon:hover {
+      color: #ff4500; /* Orange hover effect */
+    }
+
+
+    .nav-item .badge {
+      position: absolute;
+      top: 0;
+      right: 50%;
+      transform: translate(50%, -50%);
+      background-color: #ff4500; /* Orange color for 'New' badge */
+      color: white;
+      font-size: 0.6rem;
+      padding: 2px 5px;
+      border-radius: 12px;
+    }
+    .nav-link {
+      text-align: center;
+      font-size: 0.8rem;
+    }
+    .nav-link img {
+      width: 40px; /* Icon size */
+      display: block;
+      margin: 0 auto 5px;
+    }
+    .nav-link:hover {
+      color: #ff4500; /* Orange hover effect */
+    }
+    /* .active {
+      border-bottom: 3px solid #ff4500; /* Orange underline for active item
+   } */
+     
+
+.top-left {
+  position: absolute;
+  top: 300px;
+  left: 16px;
+}
+
+.top-left1 {
+  position: absolute;
+  top: 314px;
+  left: 16px;
+}
+
+
+.main-title {
+  font-size: 2rem;            /* example: large heading */
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.title_color_text_whitePrimary {
+  color: #000000;             /* assuming white primary text */
+}
+
+.font-medium {
+  font-weight: 500;           /* medium weight (between normal and bold) */
+}
+
+.banner-section {
+      padding: 20px;
+    }
+    .banner-card {
+      color: rgb(0, 0, 0);
+      padding: 20px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      border-radius: 10px;
+    }
+    .banner-one {
+      background-image: url('bg1.jpg'); /* Add the path to your first background image */
+    }
+    .banner-two {
+      background-image: url('bg2.jpg'); /* Add the path to your second background image */
+    }
+    .product-name {
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+    .price {
+      font-size: 1.2rem;
+      color: #ffc107; /* Highlight price */
+    }
+    .btn-buy {
+      background-color: #ffffff; /* Contrast button for better visibility */
+      color: #000000;
+      font-weight: bold;
+      border: none;
+    }
+    .btn-buy:hover {
+      background-color: #ffc107; /* Yellow hover effect */
+    }
+
+     
+    .promo-card {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      text-align: center;
+      padding: 20px;
+      transition: transform 0.3s ease-in-out;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      color: rgb(0, 0, 0); /* Text color to stand out on the image */
+      height: 250px; /* Set height for consistent design */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .promo-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .promo-card-1 {
+      background-image: url('buds1.jpg'); /* Replace with actual image path for Product 1 */
+    }
+    .promo-card-2 {
+      background-image: url('buds2.jpg'); /* Replace with actual image path for Product 2 */
+    }
+    .promo-card-3 {
+      background-image: url('buds3.jpg'); /* Replace with actual image path for Product 3 */
+    }
+    .promo-price {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    .promo-discount {
+      background-color: #28a745; /* Discount label color */
+      color: white;
+      font-size: 0.8rem;
+      padding: 5px 10px;
+      border-radius: 15px;
+      margin-bottom: 10px;
+    }
+    .promo-monthly {
+      font-size: 0.9rem;
+      color: #06325e;
+      margin-top: 5px;
+    }
+
+
+    .card-wrapper {
+      padding: 20px;
+    }
+    .feature-card {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      text-align: center;
+      padding: 20px;
+      transition: transform 0.3s ease-in-out;
+      background-color: #ffffff;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .feature-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    .icon-image {
+      width: 100%;
+    }
+    .title-text {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #333;
+    }
+    .description {
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+      color: #555;
+    }
+    .cta-button {
+      font-size: 0.9rem;
+      background-color: #ff4500;
+      color: white;
+      border: none;
+    }
+    .cta-button:hover {
+      background-color: #e63939;
+    }
+
+
+   
+    .promo-container {
+      padding: 30px;
+    }
+    .product-card {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      text-align: center;
+      padding: 20px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+      transition: transform 0.3s ease-in-out;
+    }
+    .product-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    .product-img {
+      width: 100%;
+      height: auto;
+      max-height: 200px;
+      margin-bottom: 10px;
+      object-fit: contain;
+    }
+    .product-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #333;
+    }
+    .product-price {
+      color: #ff4500;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    .discount-badge {
+      background-color: #28a745;
+      color: white;
+      font-size: 0.9rem;
+      padding: 5px 10px;
+      border-radius: 12px;
+      margin: 10px 0;
+    }
+    .product-description {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 15px;
+    }
+    .btn-buy {
+      background-color: #68c0dd;
+      color: white;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 5px;
+      border: none;
+    }
+    .btn-buy:hover {
+      background-color: #e63939;
+    }
+    
+    /* footer */
+
+    .footer-container {
+      background-color: #000000; /* Light background */
+      padding: 30px 0;
+    }
+    .footer-heading {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #f4f3f3;
+      margin-bottom: 15px;
+    }
+    .footer-link {
+      text-decoration: none;
+      color: #aeacac;
+      font-size: 0.9rem;
+    }
+    .footer-link:hover {
+      color: #ff4500; /* Highlight color */
+    }
+    .social-icons a {
+      font-size: 1.5rem;
+      margin-right: 15px;
+      color: #666;
+      transition: color 0.3s;
+    }
+    .social-icons a:hover {
+      color: #ff4500; /* Highlight on hover */
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container-fluid">
+      <!-- Logo -->
+      <a class="navbar-brand" href="#"> <img src="oneplus-removebg-preview.png" width="70px" height="40px"></a>
+
+      <!-- Toggle for mobile -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navigation Items -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="#">Store</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Phone</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Tablet</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Wearables</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Audio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">More Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">OneTopia</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Community</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Support</a></li>
+        </ul>
+        <!-- Icons -->
+        <div class="d-flex">
+          <a class="icon nav-link" href="#"><img src="Searchlogo.jfif" style="width: 39px;"><i class="bi bi-search"></i></a>
+          <a class="icon nav-link" href="#"><i class="bi bi-cart"></i></a>
+          <a class="icon nav-link" href="#"><i class="bi bi-person"></i></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <br>
+
+  <h1>Store. Never settle for anything less.</h1>
+
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container">
+      <ul class="navbar-nav d-flex justify-content-between w-100">
+        <!-- Phones -->
+        <li class="nav-item active position-relative">
+          <a class="nav-link" href="#">
+            <img src="13-Black.png" alt="Phones">
+            Phones
+          </a>
+          <span class="badge">New</span>
+        </li>
+        <!-- Tablet -->
+        <li class="nav-item active position-relative">
+          <a class="nav-link" href="#">
+            <img src="tablet.png" alt="Tablet">
+            Tablet
+          </a>
+          <span class="badge">New</span>
+        </li>
+        <!-- Wearables -->
+        <li class="nav-item position-relative">
+          <a class="nav-link" href="#">
+            <img src="wearables.png" alt="Wearables">
+            Wearables
+          </a>
+          <span class="badge">New</span>
+        </li>
+        <!-- Audio -->
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <img src="buds-pro3-blue.png" alt="Audio">
+            Audio
+          </a>
+        </li>
+        <!-- Case & Protections -->
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <img src="accessory-13ke-13rmo.png" alt="Case & Protections">
+            Case & Protections
+          </a>
+        </li>
+        <!-- Power & Cables -->
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <img src="PowerCables-eu.png" alt="Power & Cables">
+            Power & Cables
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <p></p>
+  <div class="container-fluid" >
+    <img src="13R_Desktop.jpg" alt="Desktopimg" width="100%" alt="">
+     
+     <!-- <div class="tag-line title_color_text_whiteSecondary top-left"> Pro. Everywhere.</div> -->
+     <!-- <div class="text-dark fw-medium h2" >OnePlus 13R</div> -->
+
+  </div>
+  <div class="container">
+    <br>
+  </div>
+  <div class="container-fluid">
+    <img src="13_Desktop.jpg" alt="Desktopimg2" width="100%">
+  </div>
+
+  <div class="container">
+    <br>
+  </div>
+  <div class="container-fluid">
+    <img src="13_Desktop3.jpg" alt="Desktopimg3" height="400px" width="100%">
+  </div>
+
+  <div class="container">
+    <br>
+  </div>
+
+  <div class="container banner-section">
+    <div class="row g-3">
+      <!-- First Banner -->
+      <div class="col-md-6">
+        <div class="banner-card banner-one">
+          <h4 class="product-name">OnePlus Nord CE4 Lite</h4>
+          <p class="price">From ₹16,499</p>
+          <span>₹1500 Bank Discount</span>
+          <p>Free Phone Case with 8 + 256 GB variant purchase.</p>
+          <p>₹2000 Direct Off</p>
+          <button class="btn btn-buy btn-sm">Buy Now</button>
+        </div>
+      </div>
+      <!-- Second Banner -->
+      <div class="col-md-6">
+        <div class="banner-card banner-two">
+          <h4 class="product-name">OnePlus Nord 4</h4>
+          <p class="price">From ₹23,499</p>
+          <span>₹4500 Bank Discount</span>
+          <p>Free Phone Case & Screen Protector with every purchase.</p>
+          <p>₹2000 Direct Off on 8+128GB Variant</p>
+          <button class="btn btn-buy btn-sm">Buy Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="container my-4">
+    <div class="row g-3">
+      <!-- Product 1 -->
+      <div class="col-md-4">
+        <div class="promo-card promo-card-1">
+          <h4>OnePlus Buds Pro 3</h4>
+          <p class="promo-price">₹11,999 <small>(₹13,999)</small></p>
+          <div class="promo-discount">Save Up To ₹2,000</div>
+          <p class="promo-monthly">₹999.92/mo. with NCEMI</p>
+        </div>
+      </div>
+      <!-- Product 2 -->
+      <div class="col-md-4">
+        <div class="promo-card promo-card-2">
+          <h4>OnePlus Buds 3</h4>
+          <p class="promo-price">₹5,499 <small>(₹6,499)</small></p>
+          <div class="promo-discount">Save Up To ₹1,000</div>
+          <p class="promo-monthly">₹916.5/mo. with NCEMI</p>
+        </div>
+      </div>
+      <!-- Product 3 -->
+      <div class="col-md-4">
+        <div class="promo-card promo-card-3">
+          <h4>OnePlus Nord Buds 3</h4>
+          <p class="promo-price">₹2,299 <small>(₹2,699)</small></p>
+          <div class="promo-discount">Save Up To ₹400</div>
+        </div>
+      </div>
+    
+    </div>
+  </div>
+ 
+   <!-- Another row -->
+   <h2>&nbsp;Making OnePlus Experience Better</h2>
+  <div class="container card-wrapper">
+       <div class="row g-4">
+          <!-- Corporate Employee Program -->
+      <div class="col-md-3">
+        <div class="feature-card">
+          <img src="Seconrowimg1.jpg" alt="Corporate Employee Program Icon" class="icon-image">
+          <h4 class="title-text">Corporate Employee Program</h4>
+          <p class="description">Unlock exclusive discounts on OnePlus products as a verified corporate employee.</p>
+          <button class="btn cta-button">Learn More</button>
+        </div>
+      </div>
+      <!-- Exchange Program -->
+      <div class="col-md-3">
+        <div class="feature-card">
+          <img src="Seconrowimg2.jpg" alt="Exchange Program Icon" class="icon-image">
+          <h4 class="title-text">Exchange Program</h4>
+          <p class="description">Check out how much your old device is worth and switch to the Fast and Smooth experience.
+          </p>
+          <br>
+          <button class="btn cta-button">Learn More</button>
+        </div>
+      </div>
+      <!-- Easy Upgrades -->
+      <div class="col-md-3">
+        <div class="feature-card">
+          <img src="Seconrowimg3.jpg" alt="Easy Upgrades Icon" class="icon-image">
+          <h4 class="title-text">Easy Upgrades</h4>
+          <p class="description">Opt to upgrade your device for a new OnePlus Flagship and get 35% Assured Value after 24 months.</p>
+          <button class="btn cta-button">Learn More</button>
+        </div>
+      </div>
+      <!-- Student Program -->
+      <div class="col-md-3">
+        <div class="feature-card">
+          <img src="Seconrowimg4.jpg" alt="Student Program Icon" class="icon-image">
+          <h4 class="title-text">Student Program</h4>
+          <p class="description">Avail additional discounts on OnePlus devices for students.</p>
+                 
+          <br>
+          <button class="btn cta-button">Learn More</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h1>Tablet</h1>
+
+<!-- row third -->
+
+<div class="container promo-container">
+  <div class="row row-cols-1 row-cols-md-5 g-4">
+    <!-- Product Card 1 -->
+    <div class="col">
+      <div class="product-card">
+        <img src="thirdrowimg1.jpg" alt="OnePlus Pad 2" class="product-img">
+        <h4 class="product-title">OnePlus Pad 2</h4>
+        <p class="product-price">From ₹36,999</p>
+        <button class="btn btn-buy">Buy Now</button>
+      </div>
+    </div>
+    <!-- Product Card 2 -->
+    <div class="col">
+      <div class="product-card">
+        <img src="thirdrowimg2.png" alt="OnePlus Pad Go" class="product-img">
+        <h4 class="product-title">OnePlus Pad Go</h4>
+        <p class="product-price">From ₹16,999 <small>(₹19,999)</small></p>
+        <span class="discount-badge">Save Up To ₹3,000</span>
+        <p class="product-description">₹2833.17/mo. with NCEMI</p>
+        <button class="btn btn-buy">Buy Now</button>
+      </div>
+    </div>
+    <!-- Product Card 3 -->
+    <div class="col">
+      <div class="product-card">
+        <img src="thirdrowimg3.png" alt="OnePlus Go Folio Case" class="product-img">
+        <h4 class="product-title">OnePlus Go Folio Case</h4>
+        <p class="product-price">From ₹1,399</p>
+        <button class="btn btn-buy">Buy Now</button>
+      </div>
+    </div>
+    <!-- Product Card 4 -->
+    <div class="col">
+      <div class="product-card">
+        <img src="thirdrowimg4.png" alt="OnePlus Pad" class="product-img">
+        <h4 class="product-title">OnePlus Pad</h4>
+        <p class="product-price">From ₹35,999 <small>(₹37,999)</small></p>
+        <span class="discount-badge">Save Up To ₹2,000</span>
+        <button class="btn btn-buy">Buy Now</button>
+      </div>
+    </div>
+    <!-- Product Card 5 -->
+    <div class="col">
+      <div class="product-card">
+        <img src="thirdrowimg5.png" alt="OnePlus Magnetic Keyboard" class="product-img">
+        <h4 class="product-title">OnePlus Magnetic Keyboard</h4>
+        <p class="product-price">From ₹7,999 <small>(₹9,999)</small></p>
+        <span class="discount-badge">Save Up To ₹2,000</span>
+        <button class="btn btn-buy">Buy Now</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer-container">
+  <div class="container">
+    <div class="row">
+      <!-- Phones Section -->
+      <div class="col-md-2">
+        <h5 class="footer-heading">Phones</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="footer-link">OnePlus 13</a></li>
+          <li><a href="#" class="footer-link">OnePlus 13R</a></li>
+          <li><a href="#" class="footer-link">OnePlus Nord 4</a></li>
+          <li><a href="#" class="footer-link">OnePlus Nord CE4 Lite 5G</a></li>
+          <li><a href="#" class="footer-link">OnePlus 12</a></li>
+          <li><a href="#" class="footer-link">OnePlus 12R</a></li>
+          <li><a href="#" class="footer-link">OnePlus Nord CE4</a></li>
+
+
+        </ul>
+      </div>
+      <!-- Store Section -->
+      <div class="col-md-2">
+        <h5 class="footer-heading">Store</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="footer-link">Tablet</a></li>
+          <li><a href="#" class="footer-link">Audio</a></li>
+          <li><a href="#" class="footer-link">Wearables</a></li>
+          <li><a href="#" class="footer-link">Wearables</a></li>
+          <li><a href="#" class="footer-link">Wearables</a></li>
+          <li><a href="#" class="footer-link">Wearables</a></li>
+        </ul>
+      </div>
+      <!-- Support Section -->
+      <div class="col-md-2">
+        <h5 class="footer-heading">Support</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="footer-link">Shopping FAQs</a></li>
+          <li><a href="#" class="footer-link">User Manuals</a></li>
+          <li><a href="#" class="footer-link">Service Centers</a></li>
+        </ul>
+      </div>
+      <!-- Explore Section -->
+      <div class="col-md-2">
+        <h5 class="footer-heading">Explore</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="footer-link">About OnePlus</a></li>
+          <li><a href="#" class="footer-link">Community</a></li>
+          <li><a href="#" class="footer-link">Find a Store</a></li>
+        </ul>
+      </div>
+      <!-- Programs Section -->
+      <div class="col-md-2">
+        <h5 class="footer-heading">Programs</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="footer-link">Exchange Program</a></li>
+          <li><a href="#" class="footer-link">Red Cable Club</a></li>
+          <li><a href="#" class="footer-link">Student Program</a></li>
+        </ul>
+      </div>
+      <!-- Social Media Section -->
+      <div class="col-md-2 text-center">
+        <h5 class="footer-heading">Follow Us</h5>
+        <div class="social-icons">
+          <a href="#"><i class="bi bi-facebook"></i></a>
+          <a href="#"><i class="bi bi-twitter"></i></a>
+          <a href="#"><i class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
